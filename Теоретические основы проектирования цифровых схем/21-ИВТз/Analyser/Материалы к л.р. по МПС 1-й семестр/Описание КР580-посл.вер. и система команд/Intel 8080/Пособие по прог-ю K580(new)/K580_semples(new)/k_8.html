@@ -1,0 +1,1231 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>K 580</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">K 580</th></tr><tr>
+<td width="10%"><A href="k_7.html">Назад</A></td><td width="80%"></td>
+<td width="10%" align="right"><A href="k_9.html">Вперёд</A></td></tr></table></td>
+</tr><tr bgcolor="#333366"><td><IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table>
+</td></tr><tr><td><FONT size=5><STRONG><IMG height=1 src="img/spacer.gif" width=10></STRONG></FONT></td><td height="100%" valign="top" width="100%">
+      <H4 align=justify>Пример 7. </H4>
+      <FONT FACE="Times New Roman">
+      <P align=justify>Заданы 16-ричные цифры I,J,K при этом I,J удовлетворяют 
+      условию 0&lt;I&lt;J&lt;9. Цифра K перемещается то вправо, то влево между I 
+      – ым и J-ым окнами дисплея.</P>
+<P ALIGN="justify">По смыслу задачи в программе следует выделить 5 основных блоков:</P>
+<P ALIGN="justify">1) блок подготовки, в котором по вводимым значениям I,J,K формируются необходимые константы;</P>
+<P ALIGN="justify">2) блок перемещения цифры K от I-го к J –му окну дисплея;</P>
+<P ALIGN="justify">3) блок перемещения цифры K от J-го к I-му окну дисплея; </P>
+<P ALIGN="justify">4) блок очистки (гашения) окон дисплея, используемый как подпрограмма перед каждым перемещением цифры K;</P>
+<P ALIGN="justify">5) блок задержки времени, используемый как подпрограмма после каждого перемещения цифры К.</P>
+<P ALIGN="justify">Перемещение цифры K между I-ым и J-ым окнами дисплея помимо задержки времени с помощью подпрограммы P2(8244-8250) должно сопровождаться гашением (очисткой) того окна, из которого цифра K перемещена; очищаемое окно может быть расположено как левее цифры K (при движении от I-го к J-му окну), так и правее этой цифры (при движении в обратном направлении). Поэтому удобнее всего перед засылкой кода цифры очищать все 8 окон дисплея, засылая в 83F8-83FF константу вида 00 с помощью подпрограммы P1(8234-8243). Перемещение цифры K</FONT> <FONT FACE="Times New Roman">то влево, 
+      вправо между I-ым, J-ым окнами дисплея может быть реализовано с помощью 
+      двух выполняемых друг за другом циклов; в каждом из них код цифры K,J-I 
+      раз засылается при движении вправо в ячейки с адресами, возрастающими от 
+      83F7 + 1 до 83F7+J, при движении влево в ячейки с адресами, убывающими от 
+      83F7+J до 83F7-I.</P>
+<P ALIGN="justify">Это обстоятельство позволяет, во-первых, при двух циклах – движение то вправо (8217-8223),то влево (8224-8230)-использовать для адресов ссылки только один регистр HL и, во-вторых сформировать на подготовительном этапе в регистре H,L начальный адрес 83F7+I, который сначала при движении вправо будет расти до 83F7+7, затем при движении влево убывая примет свой первоначальный вид.</P>
+<P ALIGN="justify">Поскольку цифра K может быть любой, то необходимо из заготовленных в ячейках 8251-8260 кодов цифр 0-F с помощью адреса 8251+K выбрать соответствующий значению K код и сохранить его в регистре A, который не может далее использоваться ни в подпрограммеP1, ни в подпрограмме P2.</P>
+<P ALIGN="justify">Таким образом, подготовительный этап (8200-8216) должен обеспечить формирование двух констант - разности J-I и адреса 83F7+I, а также запоминание кода цифры K.</P>
+<P ALIGN="justify">Двойной регистр HL, помимо его использования в основной части (8217-8233),нужен в подготовительной части (8200-8216) и в подпрограммеP1; в обоих случаях содержимое H,L с помощью команд PUSH и POP временно сохраняются в стеке.</P>
+<P ALIGN="justify">Безусловный переход (8231-8233) обеспечивает многократное повторение программы при неизменных значениях I,J,K размещенных в ячейках 8203, 8209 и 8213 соответственно.</P></FONT>
+<P ALIGN="center"><CENTER><TABLE BORDER =1 CELLSPACING=1 CELLPADDING=7 WIDTH=505>
+        <TBODY>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8200</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>26</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\формирование старшего байта</FONT></P>
+
+</td></tr>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>83</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>83</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/начального адреса в регистре</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>06</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\запоминание</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>0I</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>0I</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\константы I</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P> </TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>3E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\запоминание</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>F7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>F7</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/константы F7</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>80</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>ADD</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;получение суммы F7+I</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>6F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>L,A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;начальный адрес 83F7+I в HL</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P> </TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>3E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\запоминание</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>0J</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>0J</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/константы J</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>90</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>SUB</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;разность J-I</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>4F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>C,A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;константа для циклов перемещения</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>E5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>PUSH</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сохранение адреса отсылки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>21</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>LXI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\начальный адрес</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>51</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>51</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*кодов</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/16-ричных цифр</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8210</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>16</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\запоминание</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>00</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>00</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/константы 00</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>1E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\запоминание</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>0K</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>0K</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/константы K</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>19</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DAD</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;адреса кодов =K--&gt;HL</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>7E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>A,M</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;код цифры K--&gt;A</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>E1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>POP</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;восстановление адреса отсылки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>41</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M1:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B,C</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;счётчик циклов</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>CD</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M2:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>CALL</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>P1</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;обращение к</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>34</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>34</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*подпрограмме очистки </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/окон дисплея</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>77</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M,A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;отсылка кода цифры K</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>CD</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>CALL</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>P2</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\обращение к</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*подпрограмме задержки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/времени</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>23</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>INX</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;новый адрес отсылки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8220</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>05</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCR</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;уменьшение счетчика</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M2</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>18</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>18</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку M2</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>41</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B,C</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;счетчик циклов</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>CD</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M3:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>CALL</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>P1</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\обращение к</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*подпрограмме очистки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/окон дисплея</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P> </TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>77</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M,A</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;отсылка кода цифры K</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>CD</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>CALL</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>P2</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\обращение к</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>44</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*подпрограмма задержки </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/времени</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>2B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCX</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;новый адрес отсылки</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>05</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCR</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;уменьшение счетчика</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M3</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>25</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>25</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8230</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку M3</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JMP</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M1</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\возврат на</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>17</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>17</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*повторение</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/циклов</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>E5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>P1:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>PUSH</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сохранение двойного регистра HL</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>21</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>LXI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\начальный адрес</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>F8</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>F8</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*ячеек, соответствующих</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>83</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>83</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/окнам дисплея</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>1E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\счетчик цикла</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>08</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>08</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<P>;(08)</P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>16</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\константа очистки окон дисплея</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>00</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>00</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<P>;/(00)</P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>72</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M4:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M,D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;отсылка константы</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>23</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>INX</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;новый адрес отсылки </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>1D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCR</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;уменьшение счетчика</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M4</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8240</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>3C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>3C</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то перейти</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку M4</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>E1</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>POP</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>H</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;восстановление двойного регистра HL</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>RET</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;возврат к основной программе</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>16</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>P2:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\счетчик внешнего цикла</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>FF</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>FF</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<P>;/(FF)</P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>1E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M5:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\счетчик внутреннего цикла</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>FF</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>FF</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<P>;/(FF)</P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>1D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>M6:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCR</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;уменьшение счетчика внутреннего цикла</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M6</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>48</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>48</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку M6</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>15</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>DCR</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;уменьшение счетчика внешнего цикла</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M5</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>46</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>46</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку M5</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8250</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>C9</P></TD>
+<TD WIDTH="7%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>RET</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="56%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;возврат к основной программе</FONT></P></TD>
+</TR></table></CENTER>
+      <P></P>
+
+<FONT FACE="Times New Roman"><P ALIGN="center">Коды 16-ричных цифр</P></FONT>
+<TABLE BORDER =1 CELLSPACING=1 CELLPADDING=7 WIDTH=126 align=center>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">8251</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">3F</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<FONT FACE="Times New Roman"><P ALIGN="center">код 0</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">2</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">06</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">1</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">3</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">5B</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">2</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">4</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">4F</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">3</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">5</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">66</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">4</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">6</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">6D</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">5</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">7</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">7D</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">6</P></TD>
+</TR>
+<TR><TD WIDTH="33%" VALIGN="top">
+<P ALIGN="center">8</P></TD>
+<TD WIDTH="30%" VALIGN="top">
+<P ALIGN="center">07</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">7</P></TD>
+</TR>
+</TABLE>
+
+<P ALIGN="center"></P>
+<P ALIGN="center"><CENTER><TABLE BORDER =1 CELLSPACING=1 CELLPADDING=7 WIDTH=126>
+        <TBODY>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">8259</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">7F</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<FONT FACE="Times New Roman"><P ALIGN="center">код 8</FONT></P></TD></TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">A</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">6F</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">9</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">B</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">77</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">A</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">C</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">5B</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">B</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">D</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">39</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">C</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">E</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">5E</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">D</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">F</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">79</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">E</P></TD>
+</TR>
+<TR><TD WIDTH="34%" VALIGN="top">
+<P ALIGN="center">8260</P></TD>
+<TD WIDTH="29%" VALIGN="top">
+<P ALIGN="center">71</P></TD>
+<TD WIDTH="37%" VALIGN="top">
+<P ALIGN="center">F</P></TD>
+</TR></TBODY></TABLE></CENTER>
+      <P></P>
+
+<FONT FACE="Times New Roman"><P ALIGN="justify">2. Упрощенные (текстовые) задачи, рекомендуемые для закрепления навыков программирования в процессе самостоятельной работы.</P>
+<P ALIGN="justify">Продумайте порядок выполнения приведенных ниже задач. Если задача не вызывает затруднений –переходите к следующей. При затруднении - вернитесь к соответствующему примеру, разобранному выше подробно. После того, как убедитесь</P>
+<P ALIGN="justify">В достаточной подготовленности, переходите к выполнению индивидуального задания.</P>
+<P ALIGN="justify">1. На дисплее строка цифр движется вправо.</P>
+<P ALIGN="justify">2. В третьем разряде дисплея поочередно (через 3 секунды) сменяют друг друга символы A,C,I.</P>
+<P ALIGN="justify">3. В последнем ( крайнем правом) разряде дисплея на 5 секунд появляется буква О, затем она гаснет.</P>
+<P ALIGN="justify">4. На дисплее мигает слово -SOS-.</P>
+<P ALIGN="justify">5. В первом разряде дисплея появляется буква A, через 1 секунду она гаснет а в последнем разряде появляется цифра 8,через 1 секунду она гаснет, а в первом разряде опять появляется буква A (организовать чередование).</P>
+<P ALIGN="justify">6. Буква A в течении трех секунд мерцает, а затем горит ровно</FONT>.</P>
+<FONT FACE="Times New Roman"><P ALIGN="justify">7. Во втором и шестом разрядах одновременно мигают буквы C и A соответственно.</P>
+</FONT><P ALIGN="justify">&nbsp;</P></TD><td><IMG height=1 src="img/spacer.gif" width=10></td></TR><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="k_7.html">Назад</A></td><th width="34%" valign="top"><A href="index.html">Оглавление</A></th>
+<td width="33%" align="right" valign="top"><A href="k_9.html">Вперёд</A></td></tr>
+<tr><td width="33%" valign="top">Пример 6</td><td width="34%" valign="top">&nbsp;</td>
+<td width="33%" align="right" valign="top">Индивидуальные&nbsp; 
+            задания</td></tr></table></td></tr></table></td></tr></TBODY></TABLE>
+</body></html>

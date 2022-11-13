@@ -1,0 +1,436 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Команды управления стеком, вводом – выводом и микропроцессором</title>
+<link rel="stylesheet" href="style.css"></head>
+<body vlink=blue alink=blue link=blue><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">Процессор К 580</th></tr><tr>
+<td width="10%"><A href="2-4.html">Назад</A></td>
+<td width="80%"></td><td width="10%" align="right">
+<A href="../3/3-0.html">Вперёд</A></td></tr></table></td></tr><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table></td></tr><tr><td>
+</td><td height="100%" valign="top" width="100%">
+      <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+      style="FONT-SIZE: 14pt">2.5. Команды управления стеком, вводом – выводом и 
+      микропроцессором</SPAN><SPAN style="FONT-SIZE: 14pt">&nbsp;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Команды этой группы состояние флагов не изменяют 
+      за исключением команды </SPAN><B style="mso-bidi-font-weight: normal"><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">POP</SPAN></I></B><B 
+      style="mso-bidi-font-weight: normal"><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I></B><B 
+      style="mso-bidi-font-weight: normal"><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">PSW</SPAN></I></B><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I><SPAN 
+      style="FONT-SIZE: 14pt">восстанавливающей все флаги.</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">&nbsp;</SPAN></P>
+      <TABLE border=1>
+        
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Операция<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Мнемоника<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Код</SPAN><SPAN 
+            style="FONT-SIZE: 14pt">команды<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Действие<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 1">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Добавление 
+            в стек<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">PUSH 
+            rr<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><FONT color=#ffffff>.<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">((SP)-1) 
+            </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> (r 
+            r<SUB>H</SUB>), ((SP)-2) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> (r 
+            r<SUB>L</SUB>), (SP) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            (SP)-2<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 2">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Удаление из 
+            стека<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">POP 
+            rr<o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><FONT color=#ffffff>.<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">(r r<SUB>L</SUB>) 
+            </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> ((SP)),&nbsp;&nbsp;&nbsp; </SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            (r r<SUB>H</SUB>) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            ((SP)+1), (SP) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            (SP)+2<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 3">
+          <TD 
+
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Обмен</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">XTHL<o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            E3<o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">(L) 
+            </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">®</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            ((SP)), (H) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">®</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            ((SP)+1)<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 4">
+          <TD 
+
+          vAlign=top width=147>
+            <P align=center><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Передача<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">SPHL</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P align=center><FONT size=4><SPAN lang=EN-US 
+            style="FONT-STYLE: normal; mso-bidi-font-size: 14.0pt">F</SPAN><SPAN 
+            style="mso-ansi-language: RU; mso-bidi-font-size: 14.0pt">9</SPAN></FONT><SPAN 
+            style="FONT-STYLE: normal; mso-ansi-language: RU; mso-bidi-font-size: 14.0pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">(SP) 
+            </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            (HL)<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 5">
+          <TD 
+
+          vAlign=top width=147>
+            <P align=center><FONT size=4><SPAN 
+            style="mso-bidi-font-size: 14.0pt">Ввод</SPAN><SPAN lang=EN-US 
+            style="mso-ansi-language: EN-US; mso-bidi-font-size: 14.0pt"><o:p></O:P></SPAN></FONT></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">IN 
+            ?<o:p></O:P></SPAN></P></TD>
+          <TD 
+
+          vAlign=top width=125>
+            <P align=center><SPAN lang=EN-US 
+            style="FONT-STYLE: normal; mso-bidi-font-size: 14.0pt"><FONT size=4>DB<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">(A) 
+            </SPAN><SPAN 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> 
+            (</SPAN><SPAN style="FONT-SIZE: 14pt">порт</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"> <SPAN 
+            lang=EN-US>?)<o:p></O:P></SPAN></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 6">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Вывод<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">OUT</SPAN><SPAN 
+            lang=EN-US style="FONT-SIZE: 14pt"> </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">?</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P align=center><FONT size=4><SPAN lang=EN-US 
+            style="FONT-STYLE: normal; mso-bidi-font-size: 14.0pt">D</SPAN><SPAN 
+            style="FONT-STYLE: normal; mso-ansi-language: RU; mso-bidi-font-size: 14.0pt"> 
+            3<o:p></O:P></SPAN></FONT></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">(порт </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">?</SPAN><SPAN 
+            style="FONT-SIZE: 14pt">) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            style="FONT-SIZE: 14pt"> (</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">A</SPAN><SPAN 
+            style="FONT-SIZE: 14pt">)<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 7">
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Разрешение<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">EI</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P align=center><FONT size=4><SPAN lang=EN-US 
+            style="FONT-STYLE: normal; mso-bidi-font-size: 14.0pt">F</SPAN><SPAN 
+            lang=EN-US style="mso-bidi-font-size: 14.0pt">B</SPAN></FONT><SPAN 
+            style="FONT-STYLE: normal; mso-ansi-language: RU; mso-bidi-font-size: 14.0pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Прерывания</FONT> <FONT size=4> 
+            разрешены<o:p></O:P></FONT></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 8">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Запрещение<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">DI</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4> 
+            F3<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Прерывания 
+        запрещены<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 9">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Останов<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">HLT</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">76<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Процесс 
+        остановлен<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 10; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=147>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Нет</FONT> <FONT 
+            size=4> 
+            операции<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NOP</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=125>
+            <P align=center><SPAN 
+            style="FONT-STYLE: normal; mso-ansi-language: RU; mso-bidi-font-size: 14.0pt"><FONT size=4>00<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=147>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">(</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">PC</SPAN><SPAN 
+            style="FONT-SIZE: 14pt">) </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">¬</SPAN></SPAN><SPAN 
+            style="FONT-SIZE: 14pt"> (</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">PC</SPAN><SPAN 
+            style="FONT-SIZE: 14pt">)+1<o:p></O:P></SPAN></P></TD></TR></TABLE>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="tab-stops: center 262.5pt left 430.5pt"><SPAN 
+      style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN>Коды команд управления стеком</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">&nbsp;<o:p></O:P></SPAN></P>
+      <TABLE border=1>
+        
+        <TR style="HEIGHT: 8.45pt; mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=130 rowSpan=2>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Операция<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=115 rowSpan=2>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Мнемоника<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=352 colSpan=4>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt">Пары регистров<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="HEIGHT: 8.45pt; mso-yfti-irow: 1">
+          <TD 
+          vAlign=top width=88>
+            <P align=center><SPAN 
+            lang=EN-US 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>BC<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">DE<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">HL<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">PSW</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR>
+        <TR style="HEIGHT: 53.4pt; mso-yfti-irow: 2; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=130>
+            <P align=center><SPAN style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>Занести в стек<o:p></O:P></FONT></SPAN></P>
+            <P class=MsoNormal align=center><SPAN 
+            style="FONT-SIZE: 14pt">Извлечь из стека<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=115>
+            <P align=center><SPAN lang=EN-US 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>PUSH<o:p></O:P></FONT></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">POP<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">C5<o:p></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">C1<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P align=center><SPAN><FONT size=4>D5<o:p></O:P></FONT></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" 
+            align=center><SPAN><FONT size=4>D1<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P align=center><SPAN><FONT size=4>E5<o:p></O:P></FONT></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" 
+            align=center><SPAN><FONT size=4>E1<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=88>
+            <P align=center><SPAN><FONT size=4>F5<o:p></O:P></FONT></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" 
+            align=center><SPAN><FONT 
+        size=4>F1<o:p></O:P></FONT></SPAN></P></TD></TR></TABLE><SPAN 
+      style="FONT-SIZE: 14pt; FONT-FAMILY: 'Times New Roman'; mso-ansi-language: RU; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: RU; mso-bidi-language: AR-SA"><BR 
+      style="PAGE-BREAK-BEFORE: always; mso-break-type: section-break" 
+      clear=all></SPAN>
+</td></tr><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="2-4.html">Назад</A></td><th width="34%" valign="top">
+<A href="../index.html">Оглавление</A></th><td width="33%" align="right" valign="top">
+<A href="../3/3-0.html">Вперёд</A></td></tr><tr><td width="33%" valign="top"></td>
+<th width="34%" valign="top"><A href="getting-started.html"></A></th>
+                <td width="33%" align="right" valign="top"><font face="Arial, Helvetica, sans-serif"> 
+                   </font></td>
+              </tr></table></td></tr></table></td></tr></table>
+</body></html>

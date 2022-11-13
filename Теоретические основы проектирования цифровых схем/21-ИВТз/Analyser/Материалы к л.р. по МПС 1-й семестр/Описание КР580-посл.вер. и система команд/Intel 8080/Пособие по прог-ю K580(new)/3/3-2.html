@@ -1,0 +1,601 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Чтение и запись содержимого программы и регистров</title>
+<link rel="stylesheet" href="style.css"></head>
+<body vlink=blue alink=blue link=blue><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">Процессор К 580</th></tr><tr>
+<td width="10%"><A href="3-0.html">Назад</A></td>
+<td width="80%"></td><td width="10%" align="right">
+<A href="3-3.html">Вперёд</A></td></tr></table></td></tr><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table></td></tr><tr><td>
+<IMG height=1 src="img/spacer.gif" width=10></td><td height="100%" valign="top" width="100%">
+      <P align=center>&nbsp;
+<SPAN style="FONT-SIZE: 14pt">3.2.Чтение и запись содержимого программы и 
+      регистров.<o:p></O:P></SPAN></P>
+      <P></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Пусть <EM>v,&nbsp;v </EM>– 16-ричные цифры 0 + </SPAN><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">F</SPAN></I><SPAN 
+      style="FONT-SIZE: 14pt">;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N</SPAN><SPAN 
+      style="FONT-SIZE: 14pt"> – любая из 16 клавиш 
+данных.<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">1.Содержимое ячейки с адресом 8200 выводится на 
+      дисплей клавишей </SPAN><I style="mso-bidi-font-style: normal"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">RST</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>в виде<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P>
+      <TABLE border=1>
+        
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=26>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">1<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">2<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=38>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">3<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">4<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">5<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=24>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">6<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">7<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt">8<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=26>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">8<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">2<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=38>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">0<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">0<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt"><FONT 
+            color=#ffffff size="-6">.<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=24>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt"><SPAN style="FONT-SIZE: 14pt"><FONT 
+            color=#ffffff size=-6>.</FONT></SPAN><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">a</SPAN></SPAN><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">b</SPAN></SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR></TABLE>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Содержимое ячейки с адресом </SPAN><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NNNN</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp;</SPAN>выводится на дисплей клавишами 
+      </SPAN><I style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">ADDR</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NNNN</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp;&nbsp; </SPAN></SPAN></I><SPAN 
+      style="FONT-SIZE: 14pt">в виде<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P>
+      <TABLE border=1>
+        
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">1<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">2<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=29>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">3<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">4<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">5<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">6<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">7<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">8<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=29>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28><SPAN 
+            style="FONT-SIZE: 14pt"><FONT color=#ffffff 
+            size=-6>.</FONT></SPAN><o:p></O:P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><SPAN style="FONT-SIZE: 14pt"><FONT 
+            color=#ffffff size=-6>.</FONT></SPAN><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">a</SPAN></SPAN><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">b</SPAN></SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR></TABLE>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Последующее нажатие клавиши </SPAN><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NEXT</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I><SPAN 
+      style="FONT-SIZE: 14pt">индицирует адрес и содержимое следующей ячейки 
+      памяти.<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Повторное нажатие клавиши </SPAN><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">MEM</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN></I><SPAN style="FONT-SIZE: 14pt">выводит 
+      на дисплей информацию из предыдущей ячейки.<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">2.Перед записью программы нужной ячейки ОЗУ 
+      устанавливается клавишами </SPAN><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">ADDR</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN></SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NNNN</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN></SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">MEM</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN style="FONT-SIZE: 14pt"><SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN></SPAN></I><SPAN 
+      style="FONT-SIZE: 14pt">в виде<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P>
+      <TABLE border=1>
+        
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">1<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">2<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=29>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">3<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">4<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">5<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">6<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">7<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">8<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=29>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><SPAN style="FONT-SIZE: 14pt"><FONT 
+            color=#ffffff size=-6>.</FONT></SPAN><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><SPAN style="FONT-SIZE: 14pt"><FONT 
+            color=#ffffff size=-6>.</FONT></SPAN><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">a</SPAN></SPAN><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=28>
+            <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">b</SPAN></SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR></TABLE>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">&nbsp;</SPAN><SPAN style="FONT-SIZE: 14pt">(в 6-м 
+      разряде дисплея высвечивается точка). После этого данные вводятся нажатием 
+      одной или двух клавиш</SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">       
+              &nbsp;данных; в 7-м и 8-м 
+      разрядах дисплея появляются новые данные.<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt">Переход к следующей ячейке ОЗУ осуществляется 
+      клавишей </SPAN><I style="mso-bidi-font-style: normal"><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NEXT</SPAN></I><I 
+      style="mso-bidi-font-style: normal"><SPAN 
+      style="FONT-SIZE: 14pt">.</SPAN></I></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><I 
+      style="mso-bidi-font-style: normal"><SPAN 
+      style="FONT-SIZE: 14pt"></SPAN></I><SPAN 
+      style="mso-bidi-font-size: 14.0pt; mso-ansi-language: RU"><FONT 
+      size=4>Повторные нажатия клавиши <I 
+      style="mso-bidi-font-style: normal">MEM </I>уменьшает адрес ячейки на 
+      единицу.</FONT></SPAN><SPAN style="FONT-SIZE: 14pt">&nbsp;</SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"></SPAN><SPAN 
+      style="FONT-SIZE: 14pt">3.Пусть </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">X</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">-любой из регистров А, В, С, </SPAN><SPAN 
+      lang=EN-US style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">D</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">, </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">E</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">, </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">, </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">H</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">, </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">L</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">. Содержимое регистра Х выдается на дисплей 
+      клавишами </SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt"></SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">REG</SPAN><SPAN 
+      lang=EN-US style="FONT-SIZE: 14pt"> </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">X</SPAN><SPAN 
+      style="FONT-SIZE: 14pt"> в виде<o:p></O:P></SPAN></P>
+      <TABLE border=1>
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">1<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">2<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">3<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">4<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">5<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">6<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">7<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">8<o:p></O:P></SPAN></P></TD></TR>
+        <TR style="mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=37>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">N<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">X<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">-<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">a</SPAN></SPAN><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=33>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-ansi-language: EN-US; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+            style="mso-char-type: symbol; mso-symbol-font-family: Symbol">b</SPAN></SPAN><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US"><o:p></O:P></SPAN></P></TD></TR></TABLE>
+      <P class=MsoNormal 
+      style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+      style="FONT-SIZE: 14pt">(при этом в 1-4 разрядах дисплея<SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN>сохраняется 
+      содержимое программного счетчика </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NNNN</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">).</SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+      style="FONT-SIZE: 14pt"></SPAN><SPAN 
+      style="FONT-SIZE: 14pt">Нажатие клавиши<SPAN 
+      style="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">NEXT</SPAN><SPAN 
+      style="FONT-SIZE: 14pt"> выводит циклически на дисплей содержимое 
+      очередного регистра </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">A</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">B</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">C</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">D</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">E</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">H</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">L</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">A</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">B</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">C</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">,…<o:p></O:P></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+      style="FONT-SIZE: 14pt">Для ввода данных в регистр Х следует нажать одну 
+      или две клавиши данных. <o:p></O:P></SPAN></P>
+      <P class=MsoNormal 
+      style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+      style="FONT-SIZE: 14pt">4.Имя пары регистров отображаются в 5-6 разрядах 
+      дисплея, а их содержимоев1-4 разрядах дисплея с помощью клавиш 
+      </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">ADDR</SPAN><SPAN 
+      lang=EN-US style="FONT-SIZE: 14pt"> </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">R</SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt"> </SPAN><SPAN lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">MEM</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">, где</SPAN><SPAN 
+      style="FONT-SIZE: 14pt">&nbsp;</SPAN></P>
+
+      <TABLE border=1>
+        
+        <TR style="mso-yfti-irow: 0">
+          <TD 
+          vAlign=top width=139>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            style="FONT-SIZE: 14pt">Значения </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">R</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=43>
+            <P style="TEXT-ALIGN: justify"><SPAN 
+            style="mso-bidi-font-size: 14.0pt"><FONT 
+            size=4>B<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=43>
+            <P style="TEXT-ALIGN: justify"><SPAN lang=EN-US 
+            style="mso-bidi-font-size: 14.0pt; mso-ansi-language: EN-US"><FONT size=4>D<o:p></O:P></FONT></SPAN></P></TD>
+          <TD 
+          vAlign=top width=42>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">8/H<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=39>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">1/P<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=40>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            style="FONT-SIZE: 14pt">2/</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">T</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR>
+        <TR style="HEIGHT: 19pt; mso-yfti-irow: 1; mso-yfti-lastrow: yes">
+          <TD 
+          vAlign=top width=139>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            style="FONT-SIZE: 14pt">Пара регистров<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=43>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">BC<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=43>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">DE<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=42>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=ES-AR 
+            style="FONT-SIZE: 14pt; mso-ansi-language: ES-AR">HL<o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=39>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">SP</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD>
+          <TD 
+          vAlign=top width=40>
+            <P class=MsoNormal 
+            style="MARGIN-RIGHT: -0.25pt; TEXT-ALIGN: justify; tab-stops: 352.75pt"><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-ansi-language: EN-US">SF</SPAN><SPAN 
+            style="FONT-SIZE: 14pt"><o:p></O:P></SPAN></P></TD></TR></TABLE></td></tr><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="3-0.html">Назад</A></td><th width="34%" valign="top">
+<A href="../index.html">Оглавление</A></th><td width="33%" align="right" valign="top">
+<A href="3-3.html">Вперёд</A></td></tr><tr><td width="33%" valign="top"></td>
+<th width="34%" valign="top"><A href="getting-started.html"></A></th>
+                <td width="33%" align="right" valign="top"><font face="Arial, Helvetica, sans-serif"> 
+                   </font></td>
+              </tr></table></td></tr></table></td></tr></table>
+</body></html>

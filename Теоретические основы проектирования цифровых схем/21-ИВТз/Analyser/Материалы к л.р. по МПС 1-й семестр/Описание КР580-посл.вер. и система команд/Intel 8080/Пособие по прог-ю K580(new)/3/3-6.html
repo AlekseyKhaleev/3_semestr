@@ -1,0 +1,140 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Рекомендации по использованию прерываний</title>
+<link rel="stylesheet" href="style.css"></head>
+<body vlink=blue alink=blue link=blue><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">Процессор К 580</th></tr><tr>
+<td width="10%"><A href="3-5.html">Назад</A></td>
+<td width="80%"></td><td width="10%" align="right">
+<A href="../4/4-0.html">Вперёд</A></td></tr></table></td></tr><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table></td></tr><tr><td>
+<IMG height=1 src="img/spacer.gif" width=10></td><td height="100%" valign="top" width="100%">
+      <P align=center>&nbsp;<SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">3.6. Рекомендации по использованию прерываний<o:p></O:P></SPAN></P>
+      <P></P>
+      <P class=MsoNormal style="TEXT-ALIGN: justify"><FONT size=4>Каждое 
+      прерывание имеет свой вектор, по которому МП определяет начальный адрес 
+      программы обработки прерывания.</FONT></P>
+      <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Как отмечалось, по 
+      команде </SPAN><SPAN lang=ES-AR 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: ES-AR">RST 
+      N</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(0=&lt;</SPAN><SPAN 
+      lang=ES-AR 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: ES-AR">N=&lt;</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">7) МП переходит на 
+      строго фиксированные адреса вида 8</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+      style="mso-char-type: symbol; mso-symbol-font-family: Symbol">*</SPAN></SPAN><SPAN 
+      lang=ES-AR 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: ES-AR">N</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">, лежащие в диапазоне 
+      0000<SUB>16</SUB>-0038<SUB>16</SUB>. Но в УОУ эта область памяти занята 
+      монитором, в связи с чем начальные адреса программ обработки прерываний 
+      хранятся в специальных ячейках-диспетчерах, куда управление передается из 
+      ячеек с адресами вида 8</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; FONT-FAMILY: Symbol; mso-bidi-font-size: 12.0pt; mso-ascii-font-family: 'Times New Roman'; mso-hansi-font-family: 'Times New Roman'; mso-char-type: symbol; mso-symbol-font-family: Symbol"><SPAN 
+      style="mso-char-type: symbol; mso-symbol-font-family: Symbol">*</SPAN></SPAN><SPAN 
+      lang=ES-AR 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: ES-AR">N</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">; содержимое 
+      диспетчера при поступлении кода прерываний загружается в программный 
+      счетчик, а также может быть изменено пользователем.<o:p></O:P></SPAN></P>
+      <P class=MsoBodyText style="TEXT-ALIGN: justify"><FONT size=4>Монитор 
+      использует<SPAN style="mso-spacerun: yes">&nbsp; </SPAN>3 вектора 
+      прерывания:</FONT></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 0 – для начального 
+      запуска программ;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 4 – для вызова 
+      монитора пользователем;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 7 – для вызова 
+      монитора по прерыванию команды пользователя.</SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"></SPAN><FONT 
+      size=4>Остальные 5 векторов прерывания пользователь может задействовать 
+      без ущерба для работы монитора. Следовательно, для использования 
+      прерываний пользователь должен предварительно загрузить соответствующими 
+      адресами ячейки – диспетчеры:</FONT></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4,83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">5) – для </SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+      1;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">2,83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">3) – для </SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+      2;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">0, 83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">F</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">1) – для </SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+      3;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify"><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">(83EC, 
+      83ED) – </SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">для</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"> 
+      RST 5;<o:p></O:P></SPAN></P>
+      <P class=MsoNormal 
+      style="TEXT-INDENT: 42.55pt; TEXT-ALIGN: justify; mso-outline-level: 1"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">EA</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">,83</SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">EB</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">) – для </SPAN><SPAN 
+      lang=EN-US 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">RST</SPAN><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+      6<o:p></O:P></SPAN></P>
+      <P class=MsoNormal style="TEXT-ALIGN: justify"><SPAN 
+      style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">(в ячейку – диспетчер 
+      с меньшим адресом загружается младший байт адреса 
+      перехода).<o:p></O:P></SPAN></P></td></tr><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="3-5.html">Назад</A></td><th width="34%" valign="top">
+<A href="../index.html">Оглавление</A></th><td width="33%" align="right" valign="top">
+<A href="../4/4-0.html">Вперёд</A></td></tr><tr><td width="33%" valign="top"></td>
+<th width="34%" valign="top"><A href="getting-started.html"></A></th>
+                <td width="33%" align="right" valign="top"><font face="Arial, Helvetica, sans-serif"> 
+                   </font></td>
+              </tr></table></td></tr></table></td></tr></table>
+</body></html>

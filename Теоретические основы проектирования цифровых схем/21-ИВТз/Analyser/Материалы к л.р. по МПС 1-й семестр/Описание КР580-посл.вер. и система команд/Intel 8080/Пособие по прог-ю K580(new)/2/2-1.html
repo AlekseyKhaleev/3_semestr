@@ -1,0 +1,1469 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>Команды пересылкиКоманды пересылки</title>
+<body vlink=blue alink=blue link=blue><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">Процессор К 580</th></tr><tr>
+<td width="10%"><A href="2-0.html">Назад</A></td>
+<td width="80%"></td><td width="10%" align="right">
+<A href="2-2.html">Вперёд</A></td></tr></table></td></tr><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table></td></tr><tr><td>
+<IMG height=1 src="img/spacer.gif" width=10></td><td height="100%" valign="top" width="100%">
+      <p><p class=MsoNormal align=center style="TEXT-ALIGN: center"><span
+ style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">2.1. Команды пересылки<o:p></O:P></span></p>
+
+<p class=MsoNormal align=center style="TEXT-ALIGN: center"><span
+ style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><o:p></O:P></span></p>
+
+<p><span
+ style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Команды пересылки состояния
+флагов не изменяют.<o:p></O:P></span></p>
+
+<p class=MsoNormal><o:p></O:P></p><!--[if gte vml 1]><![endif]--><![if !vml]><span style='mso-ignore:vglayout;
+  position:absolute;z-index:0;left:0px;margin-left:23px;margin-top:3px;
+  width:436px;height:715px'><img width=436 height=715
+              
+                     src="./2.1система%20комманд.files/image001.gif" v:shapes="_x0000_s1037 _x0000_s1026 _x0000_s1027 _x0000_s1028 _x0000_s1029 _x0000_s1030 _x0000_s1031 _x0000_s1032 _x0000_s1033 _x0000_s1034 _x0000_s1035 _x0000_s1036" ></span><![endif]>
+      <TABLE align=left border="1">
+        
+        <TR valign="top">
+          <TD>
+            <P align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Операция</SPAN></P></TD>
+          <TD>
+            <P align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Мнемоника</SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Код</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">команды<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Действие</SPAN></P></TD></TR>
+        <TR valign="top">
+          <TD>
+            <P align=center>1</P></TD>
+          <TD>
+            <P align=center>2</P></TD>
+          <TD>
+            <P align=center>3</P></TD>
+          <TD>
+            <P align=center>4</P></TD></TR>
+        <TR valign="top">
+          <TD>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Формат 
+            команд<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">1 
+            байт<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Пересылка 
+            данных<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Косвенная 
+            загрузка аккумулятора<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Косвенная запись 
+            аккумулятора<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Обмен<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Формат команд-<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >2 байта<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >непосредствен-<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ная пересылка<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Формат команд<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >3 байта<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >непосредсвтен-<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ная загрузка<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Прямая загрузка<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >аккумулятора<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Прямая запись аккумулятора<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Загрузка пары регистров</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >HL</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Запись содержимого </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >HL</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            > </SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >в память<O:P 
+            ></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >MOV r1, r2<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >MOV r, M<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >MOV M, r<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LDAX BC<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LDAX DE<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >STAX BC<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >STAX DE<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >XCHG<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >MVI, r, <EM>  v<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >MVI M, <EM>  v<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><ST1:PLACE><ST1:CITY 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LXI</ST1:CITY> <ST1:STATE 
+            >BC</ST1:STATE></ST1:PLACE>, <EM> vv<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><ST1:PLACE><ST1:CITY 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LXI</ST1:CITY> <ST1:STATE 
+            >DE</ST1:STATE></ST1:PLACE>, <EM> vv<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LXI HL, <EM>  vv<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LXI SP, <EM>  vv<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LDA <EM> aa<O:P></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >STA <EM> aa<O:P></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >LHLD <EM> aa<O:P></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >SHLD <EM> aa<O:P 
+            ></O:P></EM></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >см</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >.<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ниже</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >OA<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >1A<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >O2<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >12<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ЕВ<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >см.<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ниже<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >O1<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >11<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >21<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >31<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >3А<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >32<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >2А<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >22<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >(</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >r</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >1) &lt; (</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >r</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >2)<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >(</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >r</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >) &lt; (М)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >(М) &lt; (<SPAN style="mso-spacerun: yes" 
+            > </SPAN>)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >(А) &lt; ((ВС))<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >(А) &lt; ((</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >DE</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >))<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >((</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >ВС</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >)) &lt; (</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >А</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >)<O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >((DE)) &lt; (A)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(HL) &lt; (DE)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(r) &lt; <EM>v</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(r) &lt; <EM>v</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(BC) &lt; <EM>vv</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(DE) &lt; <EM>vv</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(HL) &lt; <EM>vv</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(SP) &lt; <EM>vv</EM>  </SPAN><O:P></O:P></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(A) &lt; <EM>  (aa)<O:P 
+            ></O:P></EM></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ></SPAN>&nbsp;</P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><EM>(aa)</EM> &lt; (A)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(L) &lt; (<EM>aa</EM>  )<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(H) &lt; <EM>(a+</EM>  1)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >(<EM>aa</EM>) &lt; (L)<O:P 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal style="TEXT-ALIGN: center" align=center 
+            ><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><EM>(aa</EM></SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><EM>+</EM>1) &lt; (</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >H</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >)</SPAN><O:P 
+        ></O:P></P></TD></TR></TABLE>
+      <DIV align=center></DIV><span 
+      style="FONT-SIZE: 12pt; FONT-FAMILY: 'Times New
+                                                                   Roman'; mso-ansi-language: RU; mso-fareast-font-family: 'Times New Roman'; mso-fareast-language: RU; mso-bidi-language: AR-SA" 
+      >
+      <P align=center><br 
+      style="PAGE-BREAK-BEFORE: always; mso-break-type: section-break" clear=all 
+      ></P></span>
+      <h1 class=Section2>Коды команд пересылки</h1>
+      <P class=Section2>
+      <TABLE border="1">
+        
+        <TR valign="top">
+          <TD colSpan=2>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >Регистр-</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >приемник<o:p 
+            ></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            ><o:p></O:P></SPAN></P></TD>
+          <TD colSpan=8><FONT size=4 
+            >Пересылка данных между регистрами</FONT></TD>
+          <TD width="150">
+            <P align=center><FONT size=4 
+            >Непосредственная</FONT><FONT size=4 
+            >&nbsp;пересылка<BR>    </FONT><FONT size=4>MVI r<BR>  MVI M</FONT></P></TD></TR>
+        <TR valign="top">
+          <TD colSpan=2>&nbsp;&nbsp;</TD>
+          <TD colspan="8">
+            <P align=center><FONT size=4>Регистр- источник</FONT></P> 
+            </TD>
+            <TD>&nbsp;</TD></TR>
+        <TR valign="top">
+          <TD colSpan=2>&nbsp;</TD>
+          <TD>
+            <P align=center><FONT size=4>B</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>C</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>D</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>E</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>H</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>L</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>M</FONT></P></TD>
+          <TD>
+            <P align=center><FONT size=4>A</FONT></P></TD>
+          <TD>&nbsp;</TD></TR>
+        <TR valign="top">
+          <TD colSpan=2>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">B<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">C<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">D<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">H<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">L<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">M<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">A<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">40<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">48<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">50<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">58<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">60<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">68<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">70<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">78<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">41<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">49<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">51<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">59<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">61<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">69<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">71<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">79</SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">42<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">4A<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">52<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">5A<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">62<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">6A<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">72<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7A</SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >43<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >4B<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >53<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >5B<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >63<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >6B<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >73<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7B<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >44<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >4C<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >54<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >5C<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >64<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >6C<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >74<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7C</SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >45<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >4D<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >55</SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt" 
+            >5D<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >65<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >6D<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >75<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7D</SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >46<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >4E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >56<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >5E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >66<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >6E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >-<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7E<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >47<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >4F<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >57<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >5F<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >67<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >6F<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >77<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >7F<O:P></O:P></SPAN></P></TD>
+          <TD>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >06<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P 
+            style="mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="mso-ansi-language: EN-US"><FONT size=4 
+            >0E<O:P 
+            ></O:P></FONT></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >16<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >1E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >26<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >2E<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >36<O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            ><O:P></O:P></SPAN></P>
+            <P class=MsoNormal 
+            style="TEXT-ALIGN: center; mso-element: frame; mso-element-frame-hspace: 9.0pt; mso-element-wrap: around; mso-element-anchor-vertical: paragraph; mso-element-anchor-horizontal: margin; mso-element-top: 2.0pt; mso-height-rule: exactly" 
+            align=center><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US" 
+            >3E</SPAN></P></TD></TR></TABLE></P>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+      lang=EN-US style="mso-ansi-language: EN-US"><![if !supportEmptyParas]><![endif]><o:p 
+      ></O:P></span></p>
+      <p class=MsoNormal style="tab-stops: 460.7pt"><span 
+        p<></span></p>
+</td>
+    <td><IMG height=1 src="img/spacer.gif" width=10 ></td></tr>
+  <tr>
+    <td colSpan=3>
+      <table width="100%" bgColor=#ccccff border=0>
+        
+        <tr bgColor=#333366>
+          <td><IMG height=1 src="img/spacer.gif" width=1 border=0 ><br 
+            ></td></tr>
+        <tr>
+          <td>
+            <table cellPadding=3 width="100%" border=0>
+              
+              <tr>
+                <td vAlign=top width="33%"><A href="2-0.html" >Назад</A></td>
+                <th vAlign=top width="34%"><A href="index.html" >Оглавление</A></th>
+                <td vAlign=top align=right width="33%"><A href="2-2.html" >Вперёд</A></td></tr>
+              <tr>
+                <td vAlign=top width="33%"></td>
+                <th vAlign=top width="34%"><A href="getting-started.html" ></A></th>
+                <td vAlign=top align=right width="33%" 
+                  ><font face="Arial, Helvetica, sans-serif" 
+                  ></font></td></tr></table></td></tr></table></td></tr></table>
+</body></html>

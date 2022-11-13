@@ -1,0 +1,136 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>K 580</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">K 580</th></tr><tr>
+<td width="10%"><A href="k_13.html">Назад</A></td><td width="80%"></td>
+<td width="10%" align="right"><A href="k_15.html">Вперёд</A></td></tr></table></td>
+</tr><tr bgcolor="#333366"><td><IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table>
+</td></tr><tr><td><FONT size=5><STRONG><IMG height=1 src="img/spacer.gif" width=10></STRONG></FONT></td><td height="100%" valign="top" width="100%">
+     <FONT FACE="Times New Roman"><P align=center>Таблица 4</P></FONT>
+<TABLE BORDER =1 CELLSPACING=1 CELLPADDING=7 WIDTH=945>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P ALIGN="center"><FONT FACE="Times New Roman">Номер варианта</FONT></P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>Строка символов на дисплее движется в зависимости от предварительно выданной константы Z.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>Если Z=01, то строка букв движется влево, если Z=10, то строка букв движется вправо. В противном случае на дисплее индицируется неподвижная строка цифр. </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z&lt; OF строка символов движется влево, при Z &gt;= OF – вправо</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, когда Z кратно трем, строка символов движется влево, в противном случае остается неподвижной. </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z, равной 01, 02, либо 03 на дисплее индицируются строки – </P>
+</FONT><P ALIGN="center">ABABABAB</P>
+<P ALIGN="center">EFEFEFEF</P>
+<FONT FACE="Times New Roman"><P ALIGN="center">Либо 12345678 соответственно.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>На дисплее индицируется неподвижная 8 – символьная строка вида ___ Z Z+1 Z+2 Z+3 Z+4, где 1 &lt;= Z &lt;= 5. </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если Z- простое число, на дисплее влево бежит строка букв; в противном случае индицируется неподвижный текст НЕ_ПРОС.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если Z – четное число, на дисплее влево бежит строка букв; в противном случае в первом и последнем разрядах дисплея мерцают буквы A и P.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z=02 на дисплее с периодом 2 сек. Мерцает строка букв; при Z=02 та же строка мерцает с периодом 4 сек..</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если Z кратно двум, строка букв движется вправо; в противном случае на экране с периодом 2 сек. появляется и исчезает строка цифр.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>10</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если Z &gt; ON*OK, на экране в течение 5 сек индицируется неподвижная строка букв, которая затем исчезает; а противном случае влево движется строка цифр.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>11</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z=ОМ на дисплее с периодом 3 сек .появляется и гаснет строка LLLLLLLL; при Z=OF эта строка остается неподвижной на экране.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>12</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если Z – ОК &lt;= 0, на дисплее движется вправо строка AAAAFFFF; в противном случае влево движется строка УУУУНННН.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>13</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>в случае, если Z кратно четырем, строка --АССА—движется вправо; в противном случае влево движется строка ___ПАС___ </FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>14</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z, кратном трем, на дисплее движется влево строка ОООООООО;</P>
+<P>В противном случае эта строка то появляется, то исчезает (на 3 сек)</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>15</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если произведение Z*ОМ - четное, строка букв на дисплее движется влево; в противном случае эта строка мерцает</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>16</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>В случае, если ОК-ОМ&gt; Z (ОК&gt;ОМ), НА экране с периодом 2 сек. чередуется движение строк _-НОННА и АННА-_; в противном случае на дисплее индицируется нули: 00000000, которые затем исчезают</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>17</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z, равной 03, 05, либо 07 на дисплее появляются и гаснут с периодом 4 сек. строки ААААНННН; СССС5555, либо 11111111 соответственно.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>18</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>Если Z</FONT><FONT FACE="Symbol">О</FONT><FONT FACE="Times New Roman"> [01,04] на дисплее бежит вправо строка __ Z Z+1 Z+2 Z+3 Z+4_; В противном случае та же строка движется влево</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>19</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z=OL на дисплее с периодом 7 то появляются, то гаснет строка букв; в противном случае эта же строка движется влево.</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="8%" VALIGN="top">
+<P>20</P></TD>
+<TD WIDTH="92%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>При Z &gt;03 на дисплее мерцает строка цифр; в противном случае с периодом 3 сек чередуется движение строки букв то в право, то влево.</FONT></P></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+</td><td><IMG height=1 src="img/spacer.gif" width=10></td></tr><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="k_13.html">Назад</A></td><th width="34%" valign="top"><A href="index.html">Оглавление</A></th>
+<td width="33%" align="right" valign="top"><A href="k_15.html">Вперёд</A></td></tr>
+<tr><td width="33%" valign="top">Таблица 3</td><td width="34%" valign="top">&nbsp;</td>
+<td width="33%" align="right" valign="top">Приложение 
+        1</td></tr></table></td></tr></table></td></tr></table>
+</body></html>

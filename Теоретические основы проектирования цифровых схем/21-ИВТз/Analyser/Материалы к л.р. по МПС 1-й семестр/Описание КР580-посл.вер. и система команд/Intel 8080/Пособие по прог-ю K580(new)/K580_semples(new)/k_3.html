@@ -1,0 +1,378 @@
+<!doctype HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta http-equiv="Content-Language" content="ru"><meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+<title>K 580</title>
+<link rel="stylesheet" href="style.css"></head>
+<body><table width="100%" border="0" cellpadding="0" cellspacing="0" style="HEIGHT: 100%"><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr>
+          <td>
+<table width="100%" border="0" cellpadding="3"><tr><th colspan="3">K 580</th></tr><tr>
+<td width="10%"><A href="k_2.html">Назад</A></td><td width="80%"></td>
+<td width="10%" align="right"><A href="k_4.html">Вперёд</A></td></tr></table></td>
+</tr><tr bgcolor="#333366"><td><IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr></table>
+</td></tr><tr><td><FONT size=5><STRONG><IMG height=1 src="img/spacer.gif" width=10></STRONG></FONT></td><td height="100%" valign="top" width="100%">
+      <H4 align=left>Пример 2. </H4>
+      <P align=left><FONT face="Times New Roman">Вычислить произведение 
+      16-ричных цифр К и N.</P>
+<P ALIGN="justify">Произведение 16-ричных чисел не 
+      превышает десятичного числа 15</FONT><FONT FACE="CommercialPi BT,Symbol">H</FONT><FONT FACE="Times New Roman"> 15=225 и помещается в одном байте.</P>
+<P ALIGN="justify">Двоичный код 16-ричной цифры записывается в 4-х битах (полубайте), поэтому произведения получается за 4 цикла. В каждом цикле: множимое добавляется к результату, если в очередном разряде множителя записана 1; множимое и двоичная маска сдвигаются на один разряд влево. Контроль числа циклов ведется с помощью двоичной маски, изменяющейся от 0000 0001 до 0001 0000.</P>
+<P ALIGN="justify">Подготовительная часть программы (8200-8206) загружает сомножители OK и ON в регистры D и E, очищает служащий для накопления результата регистр В и формирует начальный вид маски 01.</P>
+<P ALIGN="justify">Четырежды повторяемый цикл (8207-8218) начинается с сохранения текущей маски в регистре С (8207). Затем (8208-8208) выделяется и проверяется на равенство нулю очередной разряд множителя. Если этот разряд равен 1, то множимое добавляется к результату(82OC-82OE).</P>
+<P ALIGN="justify">Далее на один разряд влево сдвигается множимое (820F-8211) и маска (8212-8213). Цикл завершается (8214-8218) сравнением текущей маски с 0001 0000 и переходом при их не равенстве на метку М1.</P>
+<P ALIGN="justify">Программа завершается вызовом монитора УОУ (8219).</P></FONT>
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=638>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>8200</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>16</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\загрузка</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>OK</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>K</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/множимого К</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>1E</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MVI</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\загрузка</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>ON</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>N</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/множителя N</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>AF</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>XRA</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;очистка A</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>47</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>B,A</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;очистка результата</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>3C</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>INR</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;маска 0000 0001</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>4F</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M1:</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>C,A</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сохранение текущей маски</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>A3</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>ANA</P></TD>
+<TD WIDTH="8%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="52%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;очередной разряд множителя</FONT></P></TD>
+</TR>
+</TABLE>
+
+
+<TABLE CELLSPACING=0 BORDER=0 CELLPADDING=7 WIDTH=638>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>CA</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>JZ</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>M2</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если нуль,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>A</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>OF</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>OF</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку М2</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>C</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>7A</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>A,D</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;вызов множимого</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>D</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>80</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>ADD</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>B</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сложение с результатом</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>E</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>47</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>B,A</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сохранение результата</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>F</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>7A</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>M2:</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>A,D</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;вызов множимого</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>8210</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>17</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>RAL</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сдвиг множимого влево</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>1</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>57</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>D,A</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сохранение множимого</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>2</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>79</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>MOV</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>A,C</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;вызов маски</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>3</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>17</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>RAL</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;сдвиг маски влево</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>4</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>FE</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>CPI</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\сравнение текущей</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>5</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>10</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>10</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/маски с 0001 0000</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>6</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>C2</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>JNZ</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>M1</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;\если не равны,</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>7</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>07</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>07</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;*то переход</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>8</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>82</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;/на метку М1</FONT></P></TD>
+</TR>
+<TR><TD WIDTH="9%" VALIGN="top">
+<P>9</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>E7</P></TD>
+<TD WIDTH="9%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="15%" VALIGN="top">
+<P>RST4</P></TD>
+<TD WIDTH="11%" VALIGN="top">
+<P>&nbsp;</P></TD>
+<TD WIDTH="44%" VALIGN="top">
+<FONT FACE="Times New Roman"><P>;вызов монитора УОУ</FONT></P></TD>
+</TR>
+</TABLE>
+
+<P>&nbsp;</P>
+
+</td><td><IMG height=1 src="img/spacer.gif" width=10></td></tr><tr><td colspan="3">
+<table bgcolor="#ccccff" border="0" width="100%"><tr bgcolor="#333366"><td>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><br></td></tr><tr><td>
+<table width="100%" border="0" cellpadding="3"><tr><td width="33%" valign="top">
+<A href="k_2.html">Назад</A></td><th width="34%" valign="top"><A href="index.html">Оглавление</A></th>
+<td width="33%" align="right" valign="top"><A href="k_4.html">Вперёд</A></td></tr>
+<tr><td width="33%" valign="top">Пример 1</td><td width="34%" valign="top">&nbsp;</td>
+<td width="33%" align="right" valign="top">Пример 
+      3</td></tr></table></td></tr></table></td></tr></table>
+</body></html>

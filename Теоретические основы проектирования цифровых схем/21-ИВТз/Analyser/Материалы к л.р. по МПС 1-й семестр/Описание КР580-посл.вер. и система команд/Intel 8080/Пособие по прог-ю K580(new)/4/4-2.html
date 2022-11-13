@@ -1,0 +1,516 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><HTML><HEAD><META HTTP-EQUIV="Content-Language" CONTENT="ru"><META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1251">
+<TITLE>Сложение двух двухбайтных чисел</TITLE>
+<LINK REL="stylesheet" HREF="style.css"></HEAD>
+<BODY VLINK=blue ALINK=blue LINK=blue><TABLE WIDTH="100%" BORDER="0" CELLPADDING="0" CELLSPACING="0" STYLE="HEIGHT: 100%"><TR><TD COLSPAN="3">
+<TABLE BGCOLOR="#ccccff" BORDER="0" WIDTH="100%"><TR>
+          <TD>
+<TABLE WIDTH="100%" BORDER="0" CELLPADDING="3"><TR><TH COLSPAN="3">Процессор К 580</TH></TR><TR>
+<TD WIDTH="10%"><A href="4-0.html">Назад</A></TD>
+<TD WIDTH="80%"></TD><TD WIDTH="10%" ALIGN="right">
+<A href="4-3.html">Вперёд</A></TD></TR></TABLE></TD></TR><TR BGCOLOR="#333366"><TD>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><BR></TD></TR></TABLE></TD></TR><TR><TD>
+<IMG height=1 src="img/spacer.gif" width=10></TD><TD HEIGHT="100%" VALIGN="top" WIDTH="100%">
+
+<IMG height=1 src="img/spacer.gif" width=10>
+      <P CLASS=MSONORMAL 
+      STYLE="MARGIN-LEFT: 24.75pt; TEXT-INDENT: -24.75pt; TEXT-ALIGN: center; tab-stops: list 24.75pt left 57.0pt; mso-list: l0 level2 lfo2" 
+      ALIGN=center><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4.2<SPAN 
+      STYLE="FONT: 7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp; 
+      </SPAN></SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Сложение двух двухбайтных чисел<O:P></O:P></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 57.0pt" 
+      ALIGN=center><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+      <P CLASS=MSOBODYTEXT2 STYLE="TEXT-ALIGN: justify; tab-stops: 57.0pt"><FONT 
+      SIZE=4>Программа 4.2(выполняется<SPAN STYLE="mso-spacerun: yes">&nbsp; 
+      </SPAN>в<SPAN STYLE="mso-spacerun: yes">&nbsp; </SPAN>шаговом<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>режиме)</FONT><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">&nbsp;<O:P></O:P></SPAN></P>
+      <TABLE BORDER=1>
+        
+        <TR STYLE="mso-yfti-irow: 0">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Адрес<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Код<O:P></O:P></SPAN></P></TD>
+          <TD 
+         VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Метка<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Мнемокод<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Комментарий<O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 1">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8200<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8201<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">06<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">44<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">MVI</SPAN><SPAN 
+            LANG=EN-US STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">B</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">44<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Переслать байт 
+            44 в регистр В<O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 2">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8202<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8203<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">0Е<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">33<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">MVI</SPAN><SPAN 
+            LANG=EN-US STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">C</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">33<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Переслать байт 
+            33 в регистр </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">C</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 3">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8204<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8205<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">16<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">47<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">MVI</SPAN><SPAN 
+            LANG=EN-US STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">D</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">47<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Переслать байт 
+            47 в регистр </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">D</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 4">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">8206<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">8207<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">1E<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">53<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">MVI 
+            E<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">53<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Переслать байт 
+            53 в регистр </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">E</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD></TR>
+        <TR>
+          <TD vAlign=top width=67>
+            <P class=MSONORMAL style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">8208<O:P></O:P></SPAN></P></TD>
+          <TD vAlign=top width=48>
+            <P class=MSONORMAL style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">EB<O:P></O:P></SPAN></P></TD>
+          <TD vAlign=top width=65><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN></TD>
+          <TD vAlign=top width=103>
+            <P class=MSONORMAL style="TEXT-ALIGN: center" align=center><SPAN 
+            lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">XCHG<O:P></O:P></SPAN></P></TD>
+          <TD vAlign=top width=355>
+            <P class=MSONORMAL style="TEXT-ALIGN: center" align=center><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Обменять пару 
+            регистров </SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DE</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> с парой 
+            Н</SPAN><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">L</SPAN><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 5; mso-yfti-lastrow: yes">
+          <TD 
+          VALIGN=top WIDTH=67>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">8209<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">09<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DAD</SPAN><SPAN 
+            LANG=EN-US STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">BC</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Прибавить к паре 
+            регистров Н</SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">L</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> содержимое 
+            ВС<O:P></O:P></SPAN></P></TD></TR></TABLE>
+      <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center" ALIGN=center><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-INDENT: 35.45pt; TEXT-ALIGN: justify"><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Команда сложения<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>регистровых<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>пар<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DAD</SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>проводим<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>суммирование<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>только с<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>двойным<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>регистром<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">HL</SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">. Поэтому перед 
+      сложением<SPAN STYLE="mso-spacerun: yes">&nbsp; </SPAN>двухбайтных 
+      чисел,<O:P></O:P></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: justify"><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Хранящихся<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>в<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>двойных<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>регистрах<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>ВС<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>и<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DE</SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">, предварительно<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>осуществляется<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>обмен<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>регистров<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DE</SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> и </SPAN><SPAN 
+      LANG=EN-US 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">HL</SPAN><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">.<O:P></O:P></SPAN></P>
+      <P STYLE="TEXT-ALIGN: justify"><FONT SIZE=4>Результат сложения<SPAN 
+      STYLE="mso-spacerun: yes">&nbsp; </SPAN>помещается в паре регистров <SPAN 
+      LANG=EN-US STYLE="mso-ansi-language: EN-US">HL</SPAN></FONT></P>
+      <P CLASS=MSONORMAL>&nbsp;</P>
+      <P CLASS=MSONORMAL STYLE="TEXT-INDENT: 180pt"><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4433<SUB>16<O:P></O:P></SUB></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-INDENT: 189pt"><SUB><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">+<O:P></O:P></SPAN></SUB></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-INDENT: 180pt"><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4753<SUB>16</SUB><O:P></O:P></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="TEXT-INDENT: 180pt"><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8В86<SUB>16<O:P></O:P></SUB></SPAN></P>
+      <P CLASS=MSONORMAL STYLE="tab-stops: 189.0pt"><SUB><SPAN 
+      STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">&nbsp;</SPAN></SUB><FONT 
+      SIZE=4>Используя непосредственную загрузку пары регистров, можно следующим 
+      образом сократить программу:</FONT>&nbsp;<O:P></O:P></P>
+      <TABLE BORDER=1>
+        
+        <TR STYLE="mso-yfti-irow: 0">
+          <TD 
+          VALIGN=top WIDTH=120>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Адрес<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Код<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Метка<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Мнемокод<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Комментарий<O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 1">
+          <TD 
+          VALIGN=top WIDTH=120>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8200<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8201<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8202<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">01<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">33<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">44<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">LXI</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">BC</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">33<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">44<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Загрузить 
+            двойной регистр<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">ВС<SPAN 
+            STYLE="mso-spacerun: yes">&nbsp; </SPAN>двухбайтовым 
+            числом<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4433<O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 3">
+          <TD 
+          VALIGN=top WIDTH=120>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8203<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8204<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8205<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">21<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">52<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">47<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">LXI</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            STYLE="mso-spacerun: yes">&nbsp; </SPAN></SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">HL</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">53<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">47<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Загрузить 
+            двойной регистр<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">HL</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN 
+            STYLE="mso-spacerun: yes">&nbsp; </SPAN>двухбайтовым 
+            числом<O:P></O:P></SPAN></P>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">4753<O:P></O:P></SPAN></P></TD></TR>
+        <TR STYLE="mso-yfti-irow: 4; mso-yfti-lastrow: yes">
+          <TD 
+          VALIGN=top WIDTH=120>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">8206<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=48>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">09<O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=65><SPAN 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><SPAN lang=EN-US 
+            style="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US"><FONT 
+            color=#ffffff>f</FONT></SPAN></SPAN><O:P></O:P></TD>
+          <TD 
+          VALIGN=top WIDTH=103>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">DAD</SPAN><SPAN 
+            LANG=EN-US STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">BC</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD>
+          <TD 
+          VALIGN=top WIDTH=355>
+            <P CLASS=MSONORMAL STYLE="TEXT-ALIGN: center; tab-stops: 189.0pt" 
+            ALIGN=center><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt">Прибавить к паре 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">HL</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"> содержимое 
+            </SPAN><SPAN LANG=EN-US 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt; mso-ansi-language: EN-US">BC</SPAN><SPAN 
+            STYLE="FONT-SIZE: 14pt; mso-bidi-font-size: 12.0pt"><O:P></O:P></SPAN></P></TD></TR></TABLE></TD></TR><TR><TD COLSPAN="3">
+<TABLE BGCOLOR="#ccccff" BORDER="0" WIDTH="100%"><TR BGCOLOR="#333366"><TD>
+<IMG height=1 src="img/spacer.gif" width=1 border=0><BR></TD></TR><TR><TD>
+<TABLE WIDTH="100%" BORDER="0" CELLPADDING="3"><TR><TD WIDTH="33%" VALIGN="top">
+<A href="4-0.html">Назад</A></TD><TH WIDTH="34%" VALIGN="top">
+<A href="../index.html">Оглавление</A></TH><TD WIDTH="33%" ALIGN="right" VALIGN="top">
+<A href="4-3.html">Вперёд</A></TD></TR><TR><TD WIDTH="33%" VALIGN="top"></TD>
+<TH WIDTH="34%" VALIGN="top"><A href="getting-started.html"></A></TH>
+                <TD WIDTH="33%" ALIGN="right" VALIGN="top"><FONT FACE="Arial, Helvetica, sans-serif"> 
+                   </FONT></TD>
+              </TR></TABLE></TD></TR></TABLE></TD></TR></TABLE>
+</BODY></HTML>
